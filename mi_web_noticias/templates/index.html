@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Noticias Almería</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            background: #b30000;
+            color: white;
+            padding: 15px;
+        }
+
+        .noticia {
+            background: white;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📰 Noticias de Almería</h1>
+
+{% for noticia in noticias %}
+    <div class="noticia">
+        <h2>{{ noticia.titulo }}</h2>
+        <p>{{ noticia.resumen }}</p>
+        <a href="{{ noticia.link }}" target="_blank">Leer noticia</a>
+    </div>
+{% endfor %}
+
+</body>
+</html>
